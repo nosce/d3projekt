@@ -77,6 +77,7 @@ class Brush extends Component {
     render() {
         return (
             <div className="brushBox">
+                <div className="brushInfo">Filter by hierarchy level via drag and drop</div>
                 <svg ref={node => this.node = node}
                      width={this.props.size[0]} height={this.props.size[1]}/>
             </div>

@@ -15,8 +15,8 @@ class TreeChart extends Component {
         this.createContainer = this.createContainer.bind(this);
         this.createTreeChart = this.createTreeChart.bind(this);
         this.state = {
-            width: 500,
-            height: 500
+            width: 850,
+            height: 400
         };
     }
 

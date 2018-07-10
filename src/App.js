@@ -100,7 +100,9 @@ class App extends Component {
         return (
             <div className='App'>
                 <div className='App-header'>
-                    <h2>web page analyzer</h2>
+                    <h2>web</h2>
+                    <h2>page</h2>
+                    <h2>analyzer</h2>
                 </div>
                 
                 <FileBox submitFileData={this.getFileData} />
@@ -109,7 +111,7 @@ class App extends Component {
                     : null }
                 <Legend />
                 <ChartSelector data={fileData} defaultChartType="tree"/>
-                <div className="chartGroup">
+                <div className="donutChartGroup">
                     <DonutChart data={fileData} ref={this.donutRef}/>
                     {(fileData)
                         ? <DownloadButton chart={this.donutRef}
@@ -117,7 +119,7 @@ class App extends Component {
                                           height='500'/>
                         : null}
                 </div>
-                <div className="chartGroup">
+                <div className="bubbleChartGroup">
                     <WordBubbles data={fileData} ref={this.bubbleRef}/>
                     {(fileData)
                         ? <DownloadButton chart={this.bubbleRef}

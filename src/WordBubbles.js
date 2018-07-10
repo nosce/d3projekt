@@ -12,8 +12,8 @@ class WordBubbles extends Component {
         this.createWordBubbles = this.createWordBubbles.bind(this);
         this.wordCounter = this.wordCounter.bind(this);
         this.state = {
-            width: 500,
-            height: 500
+            width: 400,
+            height: 400
         };
     }
 
@@ -102,7 +102,7 @@ class WordBubbles extends Component {
             })
             .attr('dy', '.2em')
             .attr('font-size', function(d){
-                return d.r/3;
+                return d.r/2.5;
             })
             .style('text-anchor', 'middle')
             .style('font-family', 'sans-serif');
@@ -111,7 +111,7 @@ class WordBubbles extends Component {
 
     wordCounter(text) {
         // Taken from: https://gist.github.com/rocktronica/2625413
-        var sWords = text.toLowerCase().trim().replace(/[\W\d]/g, ' ').split(/[\s]+/g).sort();
+        var sWords = text.toLowerCase().trim().replace(/[^a-zA-Zäöüß]/g, ' ').split(/[\s]+/g).sort();
         var iWordsCount = sWords.length;
 
         var ignore = ['and', 'the', 'to', 'a', 'of', 'for', 'as', 'i', 'with', 'it', 'is', 'on', 'that', 'this', 'can', 'in', 'be', 'has', 'if',

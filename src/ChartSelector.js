@@ -11,15 +11,11 @@ class ChartSelector extends Component {
         super(props);
         this.switchChart = this.switchChart.bind(this);
         this.state = {
-            chartType: null,
-            width: 500,
-            height: 500
+            chartType: this.props.defaultChartType,
+            width: 850,
+            height: 400
         };
         this.chartRef = React.createRef();
-    }
-
-    componentWillReceiveProps() {
-        this.setState({chartType: this.props.defaultChartType});
     }
 
     switchChart(event) {
@@ -49,12 +45,18 @@ class ChartSelector extends Component {
                     ? <svg width={this.state.width}
                            height={this.state.height}
                            className="chartContainer">
-                         <ChartMessage width={this.state.width} height={this.state.height}/>
-                      </svg>
+                    <ChartMessage width={this.state.width} height={this.state.height}/>
+                </svg>
                     : null}
-                <button id="tree" onClick={this.switchChart}>Tree</button>
-                <button id="sunburst" onClick={this.switchChart}>Sunburst</button>
-                <button id="treemap" onClick={this.switchChart}>Treemap</button>
+                {(this.props.data)
+                    ? ( <button id="tree" onClick={this.switchChart}>Tree</button> )
+                    : null }
+                {(this.props.data)
+                    ? ( <button id="sunburst" onClick={this.switchChart}>Sunburst</button> )
+                    : null }
+                {(this.props.data)
+                    ? ( <button id="treemap" onClick={this.switchChart}>Treemap</button> )
+                    : null }
                 {(this.props.data)
                     ? <DownloadButton chart={this.chartRef}
                                       width={this.state.width}

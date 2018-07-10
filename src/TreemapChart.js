@@ -13,8 +13,8 @@ class TreemapChart extends Component {
         this.createContainer = this.createContainer.bind(this);
         this.createTreemap = this.createTreemap.bind(this);
         this.state = {
-            width: 500,
-            height: 500
+            width: 850,
+            height: 400
         };
     }
 

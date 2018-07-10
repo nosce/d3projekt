@@ -14,22 +14,22 @@ function ShowTooltips(d, parent, show) {
             // Show tooltip with tag name and attributes
             parent.attr('class', 'tooltip show')
                 .html('[ ' + d.data.tagName + ' ]<br/>' + attributes)
-                .style('left', (event.pageX + 10) + 'px')
-                .style('top', (event.pageY - 20) + 'px')
+                .style('left', (event.layerX + 10) + 'px')
+                .style('top', (event.layerY - 20) + 'px')
 
         } else if (d.data.type === 'text') {
             // Show content of text nodes
             parent.attr('class', 'tooltip show')
                 .html('[ ' + d.data.type + ' ]<br/>' + d.data.content)
-                .style('left', (event.pageX + 10) + 'px')
-                .style('top', (event.pageY - 20) + 'px')
+                .style('left', (event.layerX + 10) + 'px')
+                .style('top', (event.layerY - 20) + 'px')
 
         } else {
             // Show element type
             parent.attr('class', 'tooltip show')
                 .html('[ ' + d.data.type + ' ]')
-                .style('left', (event.pageX + 10) + 'px')
-                .style('top', (event.pageY - 20) + 'px')
+                .style('left', (event.layerX + 10) + 'px')
+                .style('top', (event.layerY - 20) + 'px')
         }
     } else {
         return (

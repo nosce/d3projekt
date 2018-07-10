@@ -12,8 +12,8 @@ class DonutChart extends Component {
         this.createContainer = this.createContainer.bind(this);
         this.createChart = this.createChart.bind(this);
         this.state = {
-            width: 500,
-            height: 500
+            width: 400,
+            height: 400
         };
     }
 
@@ -130,8 +130,8 @@ class DonutChart extends Component {
                 // Show number of element
                 toolTip.attr('class', 'tooltip show')
                     .html('[ ' + d.data.value + ' ]')
-                    .style('left', (event.pageX) + 'px')
-                    .style('top', (event.pageY - 20) + 'px')
+                    .style('left', (event.layerX + 10) + 'px')
+                    .style('top', (event.layerY - 20) + 'px')
             })
             // Hide tooltip on mouse out
             .on('mouseout',  function(d) {

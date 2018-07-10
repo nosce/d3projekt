@@ -2,31 +2,52 @@
   text-align: center;
   font-family: 'Encode Sans Condensed', sans-serif;
   box-sizing: border-box;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+    padding-top: 20px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  width: 20%;
+  text-align: right;
+  background-color: #373737;
+  height: 135px;
+  padding: 10px;
+  padding-top: 5px;
   color: white;
+    float: left;
+}
+.App-header h2 {
+    margin: 5px;
+    font-size: 30px;
+}
+.App-header h2:first-child {
+    color: #DDEDAA;
+}
+.App-header h2:nth-child(2) {
+    color: #93B5C6;
+}
+.App-header h2:last-child {
+    color: #BD4F6C;
 }
 
-.App-title {
-  font-size: 1.5em;
+footer {
+    background-color: #373737;
+    font-size: 12px;
+    padding: 3px;
+    color: white;
+    clear: both;
 }
 
-.App-intro {
-  font-size: large;
+footer a {
+    text-decoration: none;
+    color: #93B5C6;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+footer b {
+    color: #BD4F6C;
+}
+
+footer i {
+    color: #DDEDAA;
 }
 
 /* Hide default input box */
@@ -45,7 +66,7 @@
     min-height: 110px;
     background-color: #93B5C6;
     text-align: center;
-    margin: auto;
+    margin-left: 25%;
     outline: 2px dashed white;
     outline-offset: -10px;
 }
@@ -110,8 +131,10 @@
 .legend {
     display: block;
     text-align: center;
-    max-width: 450px;
-    margin: auto;
+    width: 110px;
+    margin-left: calc(20% - 85px);
+    margin-top: 20px;
+    float: left;
 }
 .legendText {
     width: 100px;
@@ -119,10 +142,47 @@
     margin: 5px;
 }
 
+button {
+    cursor: pointer;
+}
+
+
 /* Chart styles */
 .chartSwitch {
     display: block;
-    clear: both;
+    margin-left: 25%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.chartSwitch button {
+    display: block;
+    width: 80px;
+    height: 50px;
+    background-color: whitesmoke;
+    border: none;
+    position: absolute;
+    left: 870px;
+    top: 0;
+}
+
+.chartSwitch button:nth-of-type(2) {
+    top: 60px;
+}
+.chartSwitch button:nth-of-type(3) {
+    top: 120px;
+}
+.chartSwitch button:nth-of-type(4) {
+    top: 180px;
+}
+
+.downloadButton svg {
+    width: 30px;
+    height: 30px;
+}
+.downloadButton svg {
+    position: relative !important;
 }
 
 .treeChart,
@@ -133,10 +193,56 @@
 .chartContainer {
     border: 2px dashed silver;
     background-color: white;
-    margin: 10px;
-    width: 500px;
-    height: 500px;
+    width: 850px;
+    height: 400px;
     overflow: hidden;
+    position: relative;
+}
+
+.wordBubbles,
+.donutChart {
+    width: 400px;
+    height: 400px;
+}
+
+.bubbleChartGroup,
+.donutChartGroup {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    float: left;
+}
+.donutChartGroup {
+    margin-left: 25%;
+}
+
+.bubbleChartGroup svg,
+.donutChartGroup svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bubbleChartGroup button,
+.donutChartGroup button {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: whitesmoke;
+    border: none;
+    position: absolute;
+    left: 420px;
+    top: 0;
+}
+
+.donutChartGroup button {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: whitesmoke;
+    border: none;
+    position: absolute;
+    left: -70px;
+    top: 0;
 }
 
 .treeChart circle:hover,
@@ -146,6 +252,25 @@
     cursor: pointer;
     stroke: black !important;
     stroke-width: 2;
+}
+
+/* brushBox */
+.brushBox {
+    margin-top: 15px;
+    clear: both;
+    height: 60px;
+}
+.brushInfo {
+    width: 200px;
+    height: 50px;
+    margin-left: calc(20% - 180px);
+    text-align: right;
+    float: left;
+}
+.brushBox svg {
+    margin-left: 25px;
+    text-align: left;
+    float: left;
 }
 
 /* Tooltips */

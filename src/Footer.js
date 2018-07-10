@@ -9,6 +9,8 @@ function Footer() {
                 <p>Icons made by&nbsp;
                 <a href="https://www.flaticon.com/authors/smashicons"
                    title="Smashicons">Smashicons</a>
+                    &nbsp;and&nbsp;
+                    <a href="http://www.freepik.com" title="Freepik">Freepik</a>
                 &nbsp;from&nbsp;
                 <a href="https://www.flaticon.com/"
                    title="Flaticon">

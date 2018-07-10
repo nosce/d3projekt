@@ -10,7 +10,7 @@ function ChartMessage (props) {
             <text x={conWidth/2} y={conHeight/2} textAnchor="middle" fill="silver">
                 You must upload a file
             </text>
-            <text x={conHeight/2} y={conHeight/2 + 40} textAnchor="middle" fill="silver">
+            <text x={conWidth/2} y={conHeight/2 + 40} textAnchor="middle" fill="silver">
                 to see some visualisation here.
             </text>
         </g>
