@@ -1,0 +1,170 @@
+.App {
+  text-align: center;
+  font-family: 'Encode Sans Condensed', sans-serif;
+  box-sizing: border-box;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Hide default input box */
+.filebox_file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.filebox {
+    width: 40%;
+    height: 150px;
+    min-height: 110px;
+    background-color: #93B5C6;
+    text-align: center;
+    margin: auto;
+    outline: 2px dashed white;
+    outline-offset: -10px;
+}
+
+.filebox label{
+    cursor: pointer;
+}
+
+/* Style label */
+.filebox label,
+.filebox.uploaded .filebox_filename {
+    font-size: 1.25em;
+    color: #171717;
+    display: inline-block;
+    padding: 15px;
+    height: 120px;
+    width: calc(100% - 30px);
+}
+
+.filebox svg {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.filebox label:hover,
+.filebox.is-dragover label,
+.filebox:hover label {
+    color: white;
+}
+
+.filebox:hover,
+.filebox.is-dragover {
+    background-color: #BD4F6C;
+    color: white;
+    fill: white;
+}
+
+.filebox.uploaded {
+    outline: none;
+    background-color: #DDEDAA;
+    position: relative;
+}
+
+.filebox #fileDelete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    fill: #BD4F6C;
+    cursor: pointer;
+}
+
+.filebox.uploaded:hover {
+    background-color: #DDEDAA;
+    color: initial;
+    fill: initial;
+}
+
+/* Legend */
+.legend {
+    display: block;
+    text-align: center;
+    max-width: 450px;
+    margin: auto;
+}
+.legendText {
+    width: 100px;
+    float: left;
+    margin: 5px;
+}
+
+/* Chart styles */
+.chartSwitch {
+    display: block;
+    clear: both;
+}
+
+.treeChart,
+.sunburstChart,
+.treemapChart,
+.wordBubbles,
+.donutChart,
+.chartContainer {
+    border: 2px dashed silver;
+    background-color: white;
+    margin: 10px;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.treeChart circle:hover,
+.treemapChart rect:hover,
+.sunburstChart path:hover,
+.donutChart path:hover {
+    cursor: pointer;
+    stroke: black !important;
+    stroke-width: 2;
+}
+
+/* Tooltips */
+.tooltip,
+.tooltip.show {
+    max-width: 150px;
+    max-height: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: smaller;
+    background-color: #93B5C6;
+    padding: 2px;
+    opacity: 0.8;
+    transition: opacity 200ms ease-in-out;
+}
+
+.tooltip.hide {
+    opacity: 0;
+    max-width: 0;
+    max-height: 0;
+    transition: opacity 200ms, max-width 500ms ease-in-out, max-height 500ms ease-in-out;
+}
