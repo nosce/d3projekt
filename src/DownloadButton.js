@@ -33,7 +33,7 @@ class DownloadButton extends Component {
                 a.download = 'web-page-analyzer.png';
                 a.href = canvas.toDataURL('image/png');
                 a.dispatchEvent(new MouseEvent("click"));
-                //a.click();
+                //a.click(); works in Chrome but not in Firefox
             };
 
         }

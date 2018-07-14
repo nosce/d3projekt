@@ -1,7 +1,7 @@
 {
   "name": "d3projekt",
   "version": "0.1.0",
-  "homepage" : "http://uni.ckutter.com/rma",
+  "homepage": "http://uni.ckutter.com/rma",
   "private": true,
   "dependencies": {
     "d3-array": "1.2.1",
@@ -17,15 +17,11 @@
     "d3-shape": "1.2.0",
     "d3-transition": "1.1.1",
     "d3-zoom": "^1.7.1",
-    "fast-html-parser": "^1.0.1",
     "himalaya": "^1.1.0",
-    "html2json": "^1.0.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-dropzone": "4.2.13",
-    "react-native-html-parser": "0.0.5",
-    "react-scripts": "1.1.4",
-    "superagent": "3.8.3"
+    "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -22,14 +22,18 @@ class Brush extends Component {
     createBrush() {
         const node = this.node;
         const max = this.props.extend;
+
+        // Scale of brush area
         const scale = scaleLinear().domain([1, max])
             .range([0, this.props.size[0]-50]);
 
+        // Brush box
         const levelBrush = brushX()
             .extent([[25, 0], [this.props.size[0]-25, this.props.size[1]]])
             .on("brush", brushed)
             .on("end", brushend);
 
+        // Brush axis
         const levelAxis = axisBottom()
             .scale(scale)
             .ticks((max < 20) ? max : max/2);
@@ -57,6 +61,7 @@ class Brush extends Component {
             .select("g.brush")
             .call(levelBrush);
 
+        // Snap brush to level numbers while moving
         const brushFn = this.props.changeBrush;
         function brushed() {
             if (event.sourceEvent.type === "brush") return;
@@ -66,6 +71,7 @@ class Brush extends Component {
             select(this).call(event.target.move, [rounded.map(scale)[0]+25, rounded.map(scale)[1]+25]);
         }
 
+        // Pass selected area to App at and of brush movement
         function brushend() {
             if (event.selection === null) return;
             const selectedExtent = event.selection.map(d => scale.invert(d-25));

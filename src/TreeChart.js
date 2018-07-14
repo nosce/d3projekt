@@ -114,6 +114,7 @@ class TreeChart extends Component {
         var linkLines = linkVertical()
             .x(function(d) { return d.x; })
             .y(function(d) { return d.y; });
+        
         select(node)
             .select('.links')
             .selectAll('.link')

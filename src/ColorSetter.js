@@ -1,5 +1,5 @@
 function ColorSetter(element) {
-
+    // Defines colors for visualizing the node types
     switch (element) {
         case 'html':
             return 'white';

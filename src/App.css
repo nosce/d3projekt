@@ -5,30 +5,34 @@
     padding-top: 20px;
 }
 
+/*=================================
+ *  Header
+ *=================================*/
 .App-header {
   width: 20%;
   text-align: right;
   background-color: #373737;
   height: 135px;
-  padding: 10px;
-  padding-top: 5px;
+  padding: 5px 10px 10px 10px;
   color: white;
-    float: left;
+  float: left;
 }
 .App-header h2 {
     margin: 5px;
     font-size: 30px;
+    color: #93B5C6;
 }
 .App-header h2:first-child {
     color: #DDEDAA;
-}
-.App-header h2:nth-child(2) {
-    color: #93B5C6;
 }
 .App-header h2:last-child {
     color: #BD4F6C;
 }
 
+
+/*=================================
+ *  Footer
+ *=================================*/
 footer {
     background-color: #373737;
     font-size: 12px;
@@ -50,6 +54,10 @@ footer i {
     color: #DDEDAA;
 }
 
+
+/*=================================
+ *  File upload
+ *=================================*/
 /* Hide default input box */
 .filebox_file {
     width: 0.1px;
@@ -71,11 +79,6 @@ footer i {
     outline-offset: -10px;
 }
 
-.filebox label{
-    cursor: pointer;
-}
-
-/* Style label */
 .filebox label,
 .filebox.uploaded .filebox_filename {
     font-size: 1.25em;
@@ -86,12 +89,8 @@ footer i {
     width: calc(100% - 30px);
 }
 
-.filebox svg {
-    display: block;
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
-    padding: 10px;
+.filebox label{
+    cursor: pointer;
 }
 
 .filebox label:hover,
@@ -113,6 +112,20 @@ footer i {
     position: relative;
 }
 
+.filebox.uploaded:hover {
+    background-color: #DDEDAA;
+    color: initial;
+    fill: initial;
+}
+
+.filebox svg {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
 .filebox #fileDelete {
     position: absolute;
     right: 0;
@@ -121,13 +134,10 @@ footer i {
     cursor: pointer;
 }
 
-.filebox.uploaded:hover {
-    background-color: #DDEDAA;
-    color: initial;
-    fill: initial;
-}
 
-/* Legend */
+/*=================================
+ *  Legend
+ *=================================*/
 .legend {
     display: block;
     text-align: center;
@@ -142,19 +152,14 @@ footer i {
     margin: 5px;
 }
 
+
+/*=================================
+ *  Buttons
+ *=================================*/
 button {
     cursor: pointer;
 }
 
-
-/* Chart styles */
-.chartSwitch {
-    display: block;
-    margin-left: 25%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    position: relative;
-}
 
 .chartSwitch button {
     display: block;
@@ -183,6 +188,47 @@ button {
 }
 .downloadButton svg {
     position: relative !important;
+}
+
+.bubbleChartGroup svg,
+.donutChartGroup svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bubbleChartGroup button,
+.donutChartGroup button {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: whitesmoke;
+    border: none;
+    position: absolute;
+    left: 420px;
+    top: 0;
+}
+
+.donutChartGroup button {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: whitesmoke;
+    border: none;
+    position: absolute;
+    left: -70px;
+    top: 0;
+}
+
+
+/*=================================
+ *  Chart styles
+ *=================================*/
+.chartSwitch {
+    display: block;
+    margin-left: 25%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
 }
 
 .treeChart,
@@ -216,35 +262,6 @@ button {
     margin-left: 25%;
 }
 
-.bubbleChartGroup svg,
-.donutChartGroup svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.bubbleChartGroup button,
-.donutChartGroup button {
-    display: block;
-    width: 50px;
-    height: 50px;
-    background-color: whitesmoke;
-    border: none;
-    position: absolute;
-    left: 420px;
-    top: 0;
-}
-
-.donutChartGroup button {
-    display: block;
-    width: 50px;
-    height: 50px;
-    background-color: whitesmoke;
-    border: none;
-    position: absolute;
-    left: -70px;
-    top: 0;
-}
-
 .treeChart circle:hover,
 .treemapChart rect:hover,
 .sunburstChart path:hover,
@@ -254,7 +271,9 @@ button {
     stroke-width: 2;
 }
 
-/* brushBox */
+/*=================================
+ *  Brush area
+ *=================================*/
 .brushBox {
     margin-top: 15px;
     clear: both;
@@ -273,7 +292,10 @@ button {
     float: left;
 }
 
-/* Tooltips */
+
+/*=================================
+ *  Tooltips
+ *=================================*/
 .tooltip,
 .tooltip.show {
     max-width: 150px;

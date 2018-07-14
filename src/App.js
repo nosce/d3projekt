@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import FileBox from './FileBox'
 import './App.css'
+import FileBox from './FileBox'
 import ChartSelector from './ChartSelector'
 import DonutChart from './DonutChart'
 import WordBubbles from './WordBubbles'
@@ -24,12 +24,13 @@ class App extends Component {
         this.bubbleRef = React.createRef();
     }
 
+    // Callback function after uploading a file
     getFileData = (uploadedFile) => {
-        // Reset values
+        // Reset file values before loading new file
         this.setState({fileDepth: 0});
         this.setState({fileHierarchy: null});
         this.setState({fileData: null});
-        // Load data
+        // Load file data
         this.setState({ fileData: uploadedFile });
 
         if(uploadedFile) {
@@ -46,12 +47,14 @@ class App extends Component {
                 }
                 return childNodes;
             });
+            // Store file properties
             this.setState({fileDepth: data.height + 1});
             this.setState({fileHierarchy: data});
             this.setState({fileData: data.copy()});
         }
     };
 
+    // Callback function after moving the brush
     onBrush = (brushRange) => {
         this.setState({ brushExtent: brushRange });
         // Get copy of original hierarchy
@@ -61,9 +64,8 @@ class App extends Component {
         root.children.forEach(trim);
         trimFront(root);
         this.setState({ fileHierarchy: root });
-        console.log(root);
 
-        // Trims the tree branches from the front
+        // Trims the hierarchy from the top keeping the root node
         function trimFront(d) {
             if(d === root) {
                 d._children = d.children;
@@ -82,7 +84,7 @@ class App extends Component {
             }
         }
         
-        // Trims the tree branches from the back
+        // Trims the hierarchy from the bottom
         function trim(d) {
             if (d.children) {
                 d._children = d.children;
@@ -98,18 +100,21 @@ class App extends Component {
         var fileData = this.state.fileHierarchy;
         var fileDepth = this.state.fileDepth;
         return (
+
             <div className='App'>
                 <div className='App-header'>
                     <h2>web</h2>
                     <h2>page</h2>
                     <h2>analyzer</h2>
                 </div>
-                
+
                 <FileBox submitFileData={this.getFileData} />
                 {(fileData)
                     ? <Brush changeBrush={this.onBrush} size={[600, 50]} extend={fileDepth}/>
                     : null }
+
                 <Legend />
+
                 <ChartSelector data={fileData} defaultChartType="tree"/>
                 <div className="donutChartGroup">
                     <DonutChart data={fileData} ref={this.donutRef}/>
@@ -127,10 +132,9 @@ class App extends Component {
                                           height='500'/>
                         : null}
                 </div>
+
                 <Footer />
             </div>
-
-
         )
     }
 }

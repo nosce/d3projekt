@@ -79,6 +79,7 @@ class DonutChart extends Component {
         var labelArc = arc()
             .outerRadius(radius - 70)
             .innerRadius(radius - 100);
+        
         var labelArc2 = arc()
             .outerRadius(radius - 100)
             .innerRadius(radius - 125);
