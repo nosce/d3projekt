@@ -1,7 +1,6 @@
 {
   "name": "d3projekt",
   "version": "0.1.0",
-  "homepage": "http://uni.ckutter.com/rma",
   "private": true,
   "dependencies": {
     "d3-array": "1.2.1",
